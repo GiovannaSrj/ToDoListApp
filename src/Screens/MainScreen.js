@@ -1,26 +1,14 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import Header from "../components/MainScreen/Header";
-import Main from "../components/MainScreen/Main";
-import Fotter from "../components/MainScreen/Fotter";
-import { useEffect, useState } from "react";
-import { loadTasks } from "./ScreenAddTask";
-import MainTask from "./MainTask";
+import Header from "../MainScreen/Header";
+import Fotter from "../MainScreen/Fotter";
+import Main from "../MainScreen/Main";
+import { StyleSheet, View } from "react-native";
 
 export default function MainScreen() {
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    loadTasks(setTasks, tasks);
-  }, []);
-  
   return (
     <View style={styles.containerMain}>
       {/* <StatusBar barStyle="default"/> */}
-      <Header />
-      
-       {tasks.length === 0 ? <Main /> : <MainTask tasks={tasks} />} 
-
+      < Header/>
+      <Main />
       <Fotter />
     </View>
   );
